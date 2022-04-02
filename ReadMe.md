@@ -47,10 +47,18 @@ The batch script described below uses `docker-compose` for running the Docker co
 
 
 ```bash
+# usage for files
 cat <image file path> | ./exiftool.sh <exiftool parameters>
+
+# example usage
+cat img1.jpg | ./exiftool.sh -a -u -g1
 ```
 
 ```bash
+# usage for urls
 echo <url> | ./exiftool_curl.sh <exiftool parameters>
+
+# example usage
+echo <url> | ./exiftool_curl.sh -a -u -g1
 ```
 
