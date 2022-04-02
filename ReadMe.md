@@ -4,7 +4,7 @@ For more information checkout the page [https://exiftool.org/](https://exiftool.
 
 For information on the command line interface, please refer to [https://exiftool.org/exiftool_pod.html](https://exiftool.org/exiftool_pod.html).
 
-Within this repository a 🐳 Docker file using `alpine` with `exiftool` installed was created to enable the usage of exiftool without the need to installing it locally.  
+Within this repository a 🐳 Docker file using ⛰️ `alpine` with `exiftool` installed was created to enable the usage of exiftool without the need to installing it locally.  
 
 <!--
 ## 🐧 Installing `exiftool` on Ubuntu/Debian locally
@@ -41,7 +41,7 @@ echo <url> | docker run --rm -i --entrypoint "/bin/sh ./curl.sh" ai2ys/exiftool 
 Tested on Linux and Windows (with WSL2).
 
 ## 🐳 Building the Docker image and running the Docker container
-This Docker image is based on "alpine" and therefore is small in size.
+This Docker image is based on ⛰️ "alpine" and therefore is small in size.
 
 The batch script described below uses `docker-compose` for running the Docker container, which will also automatically build/pull the image, if not already available. 
 
