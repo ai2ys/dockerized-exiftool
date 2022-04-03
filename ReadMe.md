@@ -31,6 +31,37 @@ cat img1.jpg | docker run --rm -i ai2ys/exiftool
 cat img1.jpg | docker run --rm -i ai2ys/exiftool -a -u -g1
 ```
 
+Example output
+```bash
+cat img1.jpg | docker run --rm -i ai2ys/exiftool -a -u -g1
+---- ExifTool ----
+ExifTool Version Number         : 12.30
+---- System ----
+File Size                       : 0 bytes
+File Modification Date/Time     : 2022:04:03 18:26:43+00:00
+File Access Date/Time           : 2022:04:03 18:26:43+00:00
+File Inode Change Date/Time     : 2022:04:03 18:26:43+00:00
+File Permissions                : prw-------
+---- File ----
+File Type                       : JPEG
+File Type Extension             : jpg
+MIME Type                       : image/jpeg
+Image Width                     : 20
+Image Height                    : 30
+Encoding Process                : Baseline DCT, Huffman coding
+Bits Per Sample                 : 8
+Color Components                : 3
+Y Cb Cr Sub Sampling            : YCbCr4:2:0 (2 2)
+---- JFIF ----
+JFIF Version                    : 1.02
+Resolution Unit                 : None
+X Resolution                    : 1
+Y Resolution                    : 1
+---- Composite ----
+Image Size                      : 20x30
+Megapixels                      : 0.000600
+```
+
 For running on image from the web the following command can be used. For the parameters the same as above applies only pass the parameters, but omit the `-` that is usually required when using pipe.
 
 ```bash
@@ -61,4 +92,3 @@ echo <url> | ./exiftool_curl.sh <exiftool parameters>
 # example usage
 echo <url> | ./exiftool_curl.sh -a -u -g1
 ```
-
