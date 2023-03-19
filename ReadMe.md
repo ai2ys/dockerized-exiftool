@@ -24,6 +24,8 @@ Ready to use Docker image is available on DockerHub.
 # usage
 cat <image file path> | docker run --rm -i ai2ys/exiftool <exiftool parameters>
 
+curl -fsSL <image url> | docker run --rm -i ai2ys/exiftool <exiftool parameters>
+
 # example using default parameters
 cat img1.jpg | docker run --rm -i ai2ys/exiftool
 
@@ -62,33 +64,8 @@ Image Size                      : 20x30
 Megapixels                      : 0.000600
 ```
 
-For running on image from the web the following command can be used. For the parameters the same as above applies only pass the parameters, but omit the `-` that is usually required when using pipe.
-
-```bash
-# usage
-echo <url> | docker run --rm -i --entrypoint "/bin/sh ./curl.sh" ai2ys/exiftool <exiftool parameters>
-```
-
-Tested on Linux and Windows (with WSL2).
+<!-- Tested on Linux and Windows (with WSL2). -->
 
 ## 🐳 Building the Docker image and running the Docker container
 This Docker image is based on ⛰️ "alpine" and therefore is small in size.
 
-The batch script described below uses `docker-compose` for running the Docker container, which will also automatically build/pull the image, if not already available. 
-
-
-```bash
-# usage for files
-cat <image file path> | ./exiftool.sh <exiftool parameters>
-
-# example usage
-cat img1.jpg | ./exiftool.sh -a -u -g1
-```
-
-```bash
-# usage for urls
-echo <url> | ./exiftool_curl.sh <exiftool parameters>
-
-# example usage
-echo <url> | ./exiftool_curl.sh -a -u -g1
-```

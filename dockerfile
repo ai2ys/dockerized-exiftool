@@ -7,9 +7,4 @@ RUN apk update && apk add --no-cache \
     curl \
   && rm -rf /var/cache/apk/*
 
-WORKDIR /home/$USER
-RUN mkdir -p ./scripts
-COPY ./scripts/* ./scripts/
-WORKDIR /home/$USER/scripts
-
-ENTRYPOINT ["/bin/sh", "./exiftool.sh"]
+ENTRYPOINT ["/bin/sh", "-c", "exiftool $@ -"]
