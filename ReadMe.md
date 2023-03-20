@@ -36,7 +36,9 @@ cat img1.jpg | docker run --rm -i ai2ys/exiftool -a -u -g1
 When using `docker compose` the command has to look like the following.
 
 ```bash
-docker compose cat <image file path> | docker compose run --rm -T exiftool <exiftool parameters>
+cat <image file path> | docker compose run --rm -T exiftool <exiftool parameters>
+
+curl -fsSL <image url> | docker compose run --rm -T exiftool <exiftool parameters>
 ```
 
 In both cases the command can get overwritten when ruinning the container.
