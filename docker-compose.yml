@@ -6,5 +6,5 @@ services:
       context: .
       dockerfile: dockerfile
     image: ai2ys/exiftool:0.0.0
-    tty: false
-    stdin_open: true # equivalent: docker run -i 
+    # tty: false
+    # stdin_open: true # equivalent: docker run -i 

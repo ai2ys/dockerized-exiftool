@@ -1,1 +1,0 @@
-docker-compose run --rm -T --entrypoint "/bin/sh ./curl.sh" exiftool "$@"

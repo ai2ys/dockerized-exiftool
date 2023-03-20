@@ -1,4 +1,4 @@
-FROM alpine:3.15.3
+FROM alpine:3.17
 
 WORKDIR /
 
@@ -7,4 +7,5 @@ RUN apk update && apk add --no-cache \
     curl \
   && rm -rf /var/cache/apk/*
 
-ENTRYPOINT ["/bin/sh", "-c", "exiftool $@ -"]
+ENTRYPOINT ["/bin/sh"]
+CMD ["-c", "exiftool $@ -"]

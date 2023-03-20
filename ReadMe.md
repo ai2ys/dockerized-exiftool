@@ -18,7 +18,7 @@ sudo apt-get install -y exiftool
 Ready to use Docker image is available on DockerHub.
 [https://hub.docker.com/repository/docker/ai2ys/exiftool](https://hub.docker.com/repository/docker/ai2ys/exiftool)
 
-ℹ️ Do not pass the additional `-` that is required when piping a file to exiftool on the command line. In the Docker image a script is used to take care of this, so you only need to specify the other parameters, e.g. used for dumping metadata like `-a -u -g1` 
+ℹ️ Do not pass the additional `-` that is required when piping a file to exiftool on the command line. In the Docker the default command takes care of this, so you only need to specify the other parameters, e.g. used for dumping metadata like `-a -u -g1` 
 
 ```bash
 # usage
@@ -32,6 +32,14 @@ cat img1.jpg | docker run --rm -i ai2ys/exiftool
 # example using some parameters
 cat img1.jpg | docker run --rm -i ai2ys/exiftool -a -u -g1
 ```
+
+When using `docker compose` the command has to look like the following.
+
+```bash
+docker compose cat <image file path> | docker compose run --rm -T exiftool <exiftool parameters>
+```
+
+In both cases the command can get overwritten when ruinning the container.
 
 Example output
 ```bash
