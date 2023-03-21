@@ -1,11 +1,10 @@
 version: '3.8'
 services:
   exiftool:
-    #entrypoint: ["/bin/sh", "./exiftool.sh"]
     container_name: 'exiftool'
     build:
       context: .
       dockerfile: dockerfile
-    image: ai2ys/exiftool:0.0.0
-    stdin_open: true # equivalent: docker run -i 
-    #tty: true
+    image: ai2ys/exiftool:1.0.0
+    # tty: false
+    # stdin_open: true # equivalent: docker run -i 
